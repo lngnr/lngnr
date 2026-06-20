@@ -1,0 +1,22 @@
+name: Generate stats
+on:
+  schedule:
+    - cron: 0 0 * * 6
+  push:
+    branches:
+      - main
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Generate Metrics
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: header, repositories
+          plugin_lines: yes
+

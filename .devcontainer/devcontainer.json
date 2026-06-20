@@ -1,0 +1,12 @@
+{
+	"name": "lngnr stats page",
+	"image": "mcr.microsoft.com/devcontainers/base:resolute",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"github.vscode-github-actions",
+				"editorconfig.editorconfig"
+			]
+		}
+	}
+}
